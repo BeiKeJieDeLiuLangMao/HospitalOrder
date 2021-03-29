@@ -1,0 +1,24 @@
+server:
+  port: 29000
+
+socket:
+  io:
+    port: 29001
+
+# jdbc_config   datasource
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://1.1.1.1:56033/bbm_hospital?characterEncoding=utf8&useSSL=false&&sessionVariables=sql_mode='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION,PIPES_AS_CONCAT,ANSI_QUOTES'&serverTimezone=Asia/Shanghai&autoReconnect=true
+    username: username
+    password: password
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 60000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
